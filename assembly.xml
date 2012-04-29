@@ -1,0 +1,38 @@
+
+<assembly>
+  <id>jruby-rails-jetty-skeleton</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.build.directory}/jetty-dist/${jetty.artifactId}-${jetty.version}</directory>
+      <outputDirectory>jetty</outputDirectory>
+      <fileMode>0755</fileMode>
+    </fileSet>
+  </fileSets>
+  <files>
+    <file>
+      <source>${project.build.directory}/jruby-rails-jetty-skeleton.war</source>
+      <destName>root.war</destName>
+      <outputDirectory>jetty/webapps</outputDirectory>
+      <fileMode>0755</fileMode>
+    </file>
+  </files>
+  <dependencySets>
+    <dependencySet>
+      <outputFileNameMapping>${artifact.groupId}-${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <outputDirectory>jetty/lib</outputDirectory>
+      <scope>provided</scope>
+      <includes>
+        <include>log4j:log4j</include>
+        <include>org.slf4j:slf4j-api</include>
+        <include>org.slf4j:slf4j-log4j12</include>
+      </includes>
+      <unpack>false</unpack>
+      <fileMode>0644</fileMode>
+    </dependencySet>
+  </dependencySets>
+</assembly>
