@@ -76,15 +76,31 @@
         <version>1.2.1</version>
         <executions>
           <execution>
+            <id>bundler-install</id>
             <phase>process-resources</phase> 
             <goals>
               <goal>exec</goal>
             </goals>
+            <configuration>
+              <executable>bundle</executable>
+              <arguments>
+                <argument>install</argument>
+                <argument>--path</argument>
+                <argument>vendor</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>warble</id>
+            <phase>process-resources</phase> 
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>warble</executable>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <executable>warble</executable>
-        </configuration>
       </plugin>
     </plugins> 
   </build>
