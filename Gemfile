@@ -1,7 +1,7 @@
 # Note that this has to be http for now, see https://github.com/carlhuda/bundler/issues/1621
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.17'
 gem 'json'
 gem 'jquery-rails'
 
